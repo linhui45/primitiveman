@@ -1,0 +1,42 @@
+<!--pages/category/category.wxml-->
+<!-- <view class="tabNav">
+    <view wx:for="{{categories}}" wx:key="id" data-idx="{{id}}" bindtap="currentTab" class="{{categorySelected==item.scrollId? 'cur' : ''}}">
+      <text>{{item.name}}</text>
+    </view>
+</view> -->
+<view class='content'>
+  <!-- <scroll-view scroll-x="true" class="nav" scroll-left="{{categoryToView}}" scroll-with-animation="{{true}}">
+    <block wx:for="{{categories}}" wx:for-index="id" wx:for-item="navItem" wx:key="id">
+      <view class="nav-item {{categorySelected==item.scrollId?'active':''}}"  data-current="{{navItem.scrollId}}" bindtap="onCategoryClick">{{navItem.name}}</view>
+    </block>        
+  </scroll-view> -->
+  <scroll-view class='nav' scroll-x="true" scroll-into-view="{{categoryToView}}">
+    <block wx:for="{{categories}}" wx:key="id">
+      <view class="nav-item {{categorySelected==item.scrollId?'active':''}}" data-id='{{item.scrollId}}' id='{{item.scrollId}}' bindtap='onCategoryClick'>
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </scroll-view>
+
+  <scroll-view class='tab-box' scroll-y="true" scroll-into-view="{{goodsToView}}" bindscroll="scroll">
+    <block wx:for="{{goodsWrap}}" wx:key="id">
+
+      <!-- <view class="goodsWrap-category" id='{{item.scrollId}}'>
+        <text>{{item.name}}</text>
+      </view> -->
+
+      <block wx:for="{{item.goods}}" wx:for-item="goods" wx:key="id">
+        <view class='goods-item' bindtap="toDetailsTap" data-id="{{goods.id}}">
+          <image class='goods-pic' mode='aspectFill' lazy-load="true" src="{{goods.pic}}_m"></image>
+          <view class='goods-info'>
+            <text >{{goods.name}}</text>
+            <view class='price-info'>
+              <text style='color:red;'>￥{{goods.minPrice}}</text>
+              <text>销量:10</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </block>
+  </scroll-view>
+</view>

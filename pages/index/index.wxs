@@ -1,0 +1,9 @@
+var filters = {
+  toFix: function (value) {
+    //return value.toFixed(2)//此处2为保留两位小数
+    return parseInt(value);  //此处为获取整数，不进行四舍五入操作
+  }
+}
+module.exports = {
+  toFix: filters.toFix
+}
