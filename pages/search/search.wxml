@@ -1,11 +1,42 @@
 <!--pages/search.wxml-->
- 
-<view class='page_row' bindtap="suo">  
-  <view class="search">  
-    <view class="df search_arr">  
-      <icon class="searchcion" size='20' type='search'></icon>  
-      <input class="" disabled placeholder="请输入关键字" value="{{searchValue}}"/>  
-    </view>  
-  </view>  
-  <view class='sousuo'>搜索</view>  
-</view>  
+<!-- 组件模板 -->
+<view class="wrapper">
+
+  <slot></slot>
+  <!-- 搜索框开始 -->
+  <view class='tit_seabox'>
+      <view class="tit_seabox_bar {{addflag?'tit_seabox_add':''}} {{searchflag?'tit_start_search':''}}">
+          <icon type='search' size="16"></icon>
+          <input type="text" bindinput="searchList" bindconfirm="endsearchList" bindfocus='getfocus' bindblur="blursearch" confirm-type='search' value='{{searchstr}}' placeholder='请输入关键字搜索商品' />
+          <icon bindtap='activity_clear' wx:if="{{searchflag}}" type='clear' size="14"></icon>
+      
+      </view>
+      <view wx:if="{{searchflag}}" bindtap='cancelsearch' class="activity_seabtn">取消</view>
+      <view class='activity_add' wx:if="{{addflag}}"><image bindtap='addhandle' src='{{addimg}}'></image></view>
+  </view>
+<!-- 搜索框结束 -->
+  <scroll-view scroll-y="true">
+      <view class="welfares">
+        <block wx:for-items="{{searchGoods}}" wx:key="id">
+          <view class="welfares-good" catchtap="toDetailsTap" data-name="{{item.name}}" data-id="{{item.id}}">
+            <view>
+              <image src="{{item.pic}}" class="welfares-image" /> 
+            </view>
+            <view class="product-name">
+              {{item.name}}
+            </view>
+            <view class="product-price-wrap">
+              <p class="product-price-new">￥{{item.minPrice}}</p>  
+              <p wx:if="{{item.originalPrice && item.originalPrice > 0}}" class="product-price-old">￥{{item.originalPrice}}</p> 
+  
+            </view>
+            
+          </view>
+        </block> 
+      </view>
+    </scroll-view> 
+   <!-- <view class="weui-loadmore" hidden="{{hidden}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">努力加载中</view>
+  </view>   -->
+</view>

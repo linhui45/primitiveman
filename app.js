@@ -66,12 +66,19 @@ App({
         wx.setStorageSync('shopKeeper', res.data.value);
       }
     })
+    //  获取老板称呼
+    WXAPI.queryConfig({
+      key: 'time'
+    }).then(function (res) {
+      if (res.code == 0) {
+        wx.setStorageSync('time', res.data.value);
+      }
+    })
     // 获取商家信息
     WXAPI.getShopInfo({
       id: '4270',
       token: wx.getStorageSync('token')
     }).then(res => {
-      console.log(res);
       if (res.code === 0) {
         wx.setStorageSync('shopInfo', res.data.info);
         wx.setStorageSync('mallName', res.data.info.name);

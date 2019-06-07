@@ -336,5 +336,8 @@ module.exports = {
   },
   getShopInfo: (data) => {
     return request('/shop/subshop/detail/v2', true, 'get', data)
+  },
+  addComment: (data) => {
+    return request('/comment/add', true, 'post', data)
   }
 }

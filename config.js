@@ -1,5 +1,5 @@
 module.exports = {
-  version: "6.5.6",
+  version: "1.0.2",
   note: '小程序转发到微信群，可获赠积分',
   subDomain: "primitiveman", // 如果你的域名是： https://api.it120.cc/tz 那么这里只要填写 tz  primitiveman
   appid: "wx943af06971658985", // 您的小程序的appid，购物单功能需要使用

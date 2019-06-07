@@ -146,7 +146,6 @@ Page({
     that.kanjiaGoods()
     that.pingtuanGoods()
     let shopInfo = wx.getStorageSync('shopInfo');
-    console.log(shopInfo);
     shopInfo.userName = wx.getStorageSync('shopKeeper');
     //商户信息赋值
     that.setData({

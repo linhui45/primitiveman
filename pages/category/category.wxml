@@ -32,7 +32,7 @@
             <text >{{goods.name}}</text>
             <view class='price-info'>
               <text style='color:red;'>￥{{goods.minPrice}}</text>
-              <text>销量:10</text>
+              <text>销量:{{goods.numberSells}}</text>
             </view>
           </view>
         </view>

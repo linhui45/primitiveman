@@ -59,6 +59,8 @@ Page({
     const that = this;
     const goodsDetailRes = await WXAPI.goodsDetail(goodsId)
     const goodsKanjiaSetRes = await WXAPI.kanjiaSet(goodsId)
+    console.log(goodsDetailRes);
+    console.log(goodsKanjiaSetRes);
     if (goodsDetailRes.code == 0) {
       var selectSizeTemp = "";
       if (goodsDetailRes.data.properties) {

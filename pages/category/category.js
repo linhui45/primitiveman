@@ -27,7 +27,6 @@ Page({
     let that = this;
     wx.showNavigationBarLoading();
     WXAPI.goodsCategory().then(function(res) {
-      console.log(res.data);
       var categories = [];
       if (res.code == 0) {
         for (var i = 0; i < res.data.length; i++) {
@@ -83,14 +82,11 @@ Page({
             goods.push(item)
           }
         })
-      
         if (wrap.scrollId == that.data.categorySelected){
           goodsWrap.push(wrap);
         }
         
       })
-
-
 
       that.setData({
         goodsWrap: goodsWrap,

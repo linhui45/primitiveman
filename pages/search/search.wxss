@@ -1,41 +1,137 @@
-/* pages/search.wxss */
-.search{  
-  width: 80%;  
-}  
-.search_arr {  
-  border: 1px solid #d0d0d0;  
-  border-radius: 10rpx;  
-  margin-left: 20rpx;  
-}  
-.search_arr input{  
-  margin-left: 60rpx;  
-  height: 60rpx;  
-  border-radius: 5px;  
-}  
-.bc_text {  
-  line-height: 68rpx;  
-  height: 68rpx;  
-  margin-top: 34rpx;  
-}  
-  
-.sousuo {  
-  margin-left: 15rpx;  
-  width: 15%;  
-  line-height: 150%;  
-  text-align: center;  
-  border: 1px solid #d0d0d0;  
-  border-radius: 10rpx;  
-}  
-.page_row{  
-  display: flex;  
-  flex-direction: row  
-}  
-.searchcion {  
-  margin: 10rpx 10rpx 10rpx 10rpx;  
-  position: absolute;  
-  left:25rpx;  
-  z-index: 2;  
-  width: 20px;  
-  height: 20px;  
-  text-align: center;  
-}  
+/*搜索 开始*/
+.tit_seabox{
+  width: calc( 100% - 64rpx );
+  background: #fff;
+  height: 68rpx;
+  padding-left:32rpx;
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.tit_seabox_bar{
+    width: calc( 100% - 32rpx );
+    height: 68rpx;
+    display: flex;
+    align-items: center;
+    border-radius: 30rpx;
+    background: #F5F5F5;
+    padding-left: 32rpx;
+}
+/*有权限添加活动*/
+.tit_seabox_bar.tit_seabox_add{
+  width:calc( 100% - 122rpx );
+}
+/*开始搜索时*/
+.tit_seabox_bar.tit_start_search{
+  width: calc( 100% - 102rpx );
+}
+/*开始搜索且有权限添加*/
+.tit_seabox_bar.tit_start_search.tit_seabox_add{
+width:calc( 100% - 192rpx );
+}
+.tit_seabox_bar icon{
+  margin-right: 20rpx;
+
+}
+.tit_seabox input{
+  height:68rpx;
+  line-height:68rpx;
+  font-size:28rpx;
+  width:100%;
+  margin-right:32rpx;
+
+}
+.activity_add{
+  width:60rpx;
+  text-align:right;
+  border-left:4rpx solid #f2f2f2;
+  margin-left:20rpx;
+
+}
+.activity_add image{
+  width: 40rpx;
+  height: 48rpx;
+}
+.activity_seabtn{
+  font-size: 28rpx;
+  width: 70rpx;
+  text-align: right;
+}
+/*搜索 结束*/
+/**=========福利专场============**/
+.welfares{
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin:10px 5px;
+}
+.welfares-good{
+  /* height: 500rpx;  */
+  width: 47%;
+  margin:0px auto;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  font-size: 24rpx;
+  /* border: 1px #eee solid;  */
+}
+.welfares-image{
+  width: 100%;
+  height: 146px;
+  display: inline-block;
+  border: 1px #eee solid; 
+}
+.welfares-good .product-name{
+  color: #000;
+  /* height: 28px; */
+  text-align:left;
+   margin: 0px 5px; 
+   margin-bottom: 5px; 
+}
+.product-price-wrap{
+  height: 40rpx;
+}
+
+.product-price-wrap .product-price-new{
+  color: #e80080;
+  margin-left:5px;
+  font-weight:900;
+  font-size: 30rpx;
+}
+.product-price-wrap .product-price-old{
+  color: #888;
+  text-decoration: line-through;
+  padding-left: 2px;
+}
+.product-price-wrap .discount{
+  position: absolute;
+  right: 5px;
+  background-color: #000;
+  color: #fff;
+}
+/*  加载更多   */
+.weui-loading {
+  margin: 0 5px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-animation: weuiLoading 1s steps(12, end) infinite;
+  animation: weuiLoading 1s steps(12, end) infinite;
+  background: transparent url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6Ii8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTlFOUU5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMwKSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iIzk4OTY5NyIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgzMCAxMDUuOTggNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0EzQTFBMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NSA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBQkE5QUEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDU4LjY2IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjQkFCOEI5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDMkMwQzEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1MCA0NS45OCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNEMkQyRDIiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDM1IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0RBREFEQSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNjAgMjQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiLz48L3N2Zz4=) no-repeat;
+  background-size: 100%;
+}
+.weui-loadmore {
+  width: 65%;
+  margin: 1.5em auto;
+  line-height: 1.6em;
+  font-size: 12px;
+  text-align: center;
+}
+.weui-loadmore__tips {
+  display: inline-block;
+  vertical-align: middle;
+  color: #888;
+}

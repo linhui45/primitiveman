@@ -29,9 +29,6 @@ Page({
   },
 
   onLoad: function() {
-    console.log('onLoad')
-
-
   },
   onShow: function() {
     this.initShippingAddress();

@@ -83,7 +83,7 @@ swiper-item image {
   flex-wrap:wrap;
   box-sizing: content-box;
   padding: 24rpx;
-  background-color: #F2f2f2;
+  background-color: #fff;
 }
 .goods-box{
   width: 339rpx;
@@ -287,7 +287,7 @@ swiper-item image {
     display: -webkit-flex;
     box-sizing: border-box;
 }
-.services view{
+.services navigator{
     box-sizing: border-box;
     /* border: 1rpx solid #ccc; */
     flex: 1;
@@ -298,11 +298,11 @@ swiper-item image {
     padding: 32rpx 0;
 
 }
-.services view image{
+.services navigator image{
   width: 120rpx;
   height: 120rpx;
 }
-.services view text{
+.services navigator text{
   display: block;
 }
 .article-content{
@@ -311,6 +311,27 @@ swiper-item image {
   color:#707070;
   font-family:"Microsoft YaHei";
   font-weight: 500;
+}
+.content-breif {
+  /* white-space: nowrap; */
+  /* 控制宽度 */
+  /* width: 290px; */
+  max-width: 100%;
+  /* 控制显示的行数 */
+  max-height: 120px;
+  line-height: 20px;
+  /* 显示多行 */
+  display:-webkit-box; 
+  overflow:hidden; 
+  /* 5为显示的行数 */
+  -webkit-line-clamp:8;
+  -webkit-box-orient:vertical;
+}
+.look-more{
+  display: flex;
+  justify-content: center;
+  padding-top:20px;
+  padding-bottom:20px;
 }
 .search-btn{
   display: flex;

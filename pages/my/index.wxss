@@ -102,3 +102,6 @@
   margin: 20rpx;
   width: 100%;
 }
+.navigator-hover{
+  background-color: #fff;
+}
